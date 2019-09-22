@@ -9,7 +9,7 @@ function format(commands, wrap) {
 		commandsAsText = wrapInDefineFeature(
 			commandsAsText).join(newLine);
 		}
-
+		
 	return formatJavascript(commandsAsText);
 }
 function wrapInDefineFeature(commandsAsText) {
