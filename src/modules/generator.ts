@@ -1,20 +1,21 @@
-import {
-	parseFeature,
-	generateCodeFromFeature
-} from 'jest-cucumber';
+import
+	{ 	parseFeature,
+		generateCodeFromFeature }
+	from 'jest-cucumber';
 import
     formatter
     from './formatter';
 
 function generateCommandsFromFeatureAsText(
 	featureAsText,
-	selectionInformation) {
+	selectionInformation
+) {
 	const feature = parseFeature(featureAsText);
 	if (areScenariosPresentIn(feature)) {
 		return generateCommands(
-				feature,
-				selectionInformation
-			);
+			feature,
+			selectionInformation
+		);
 	}
 }
 function areScenariosPresentIn(feature) {
@@ -22,7 +23,8 @@ function areScenariosPresentIn(feature) {
 }
 function generateCommands(
 	feature,
-	selectionInformation) {
+	selectionInformation
+) {
 		if (isFeatureIn(selectionInformation)) {
 			return generateFeatureCommands(
 				feature
@@ -81,7 +83,8 @@ function generateScenarioCommands(
 }
 function filterScenariosFrom(
 	feature,
-	selectionInformation) {
+	selectionInformation
+) {
 	return feature.scenarios.filter(scenario => {
 		const { lineNumber } = scenario;
 		const { start, end } = selectionInformation;
@@ -105,9 +108,9 @@ function generateStepsCommands(
 	const { start, end } = selectionInformation;
 	for (var i = start; i <= end; i++) {
 		const command = generateCodeFromFeature(
-							feature,
-							i
-						);
+			feature,
+			i
+		);
 		commands.push(command);
 	}
 	

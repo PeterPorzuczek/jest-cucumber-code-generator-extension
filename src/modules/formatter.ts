@@ -1,6 +1,6 @@
-import {
-	js
-} from 'js-beautify';
+import
+	{ js }
+	from 'js-beautify';
 
 function format(commands, wrap) { 
 	const newLine = '\r\n';
