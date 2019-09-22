@@ -89,7 +89,7 @@ function filterScenariosFrom(
 		const { lineNumber } = scenario;
 		const { start, end } = selectionInformation;
 		
-		return 	lineNumber >= start && 
+		return	lineNumber >= start && 
 				lineNumber <= end;
 	});
 }
