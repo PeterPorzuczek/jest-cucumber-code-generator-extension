@@ -1,5 +1,5 @@
-import
-	{ js }
+import {
+	js }
 	from 'js-beautify';
 
 function format(commands, wrap) { 
