@@ -17,7 +17,7 @@ The plugin allows you to generate code from a file with the extension `.feature`
 
 ### Preview:
 <div>
-	<img src="https://i.imgur.com/EJHEvyM.gif" alt="app-preview" width="100%">
+	<img src="https://i.imgur.com/EJHEvyM.gif" alt="app-preview" width="80%">
 </div>
 
 > Tip: It is important to do it in the file with `.feature` extension.
