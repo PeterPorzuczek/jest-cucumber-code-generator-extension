@@ -8,8 +8,8 @@ function format(commands, wrap) {
 	if (wrap) {
 		commandsAsText = wrapInDefineFeature(
 			commandsAsText).join(newLine);
-    }
-    
+		}
+
 	return formatJavascript(commandsAsText);
 }
 function wrapInDefineFeature(commandsAsText) {
@@ -17,7 +17,7 @@ function wrapInDefineFeature(commandsAsText) {
 		'defineFeature(feature, test => {',
 		commandsAsText,
 		'});'
-    ];
+	];
     
 	return commandsInDefineFeature;
 }
@@ -28,8 +28,8 @@ function formatJavascript(commands) {
 			indent_size: 2,
 			space_in_empty_parent: true
 		}
-    );
-    
+	);
+	
 	return formatedJavascript;
 }
 
