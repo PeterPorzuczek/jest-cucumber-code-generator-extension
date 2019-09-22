@@ -1,0 +1,89 @@
+{
+	"name": "jest-cucumber-code-generator-extension",
+	"displayName": "Jest-cucumber code generator",
+	"description": "Jest-cucumber code generator for VS Code",
+	"version": "1.0.0",
+	"publisher": "piotr-porzuczek",
+	"engines": {
+		"vscode": "^1.38.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.generateCodeFromFeature"
+	],
+	"icon": "icon.png",
+	"main": "./dist/extension",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.generateCodeFromFeature",
+				"title": "Generate code from feature"
+			}
+		],
+		"menus": {
+			"editor/context": [
+				{
+					"command": "extension.generateCodeFromFeature",
+					"group": "YourGroup@1",
+					"when": "editorHasSelection && resourceExtname == .feature"
+				}
+			]
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "clear && webpack --config config/webpack/webpack.config.js --mode production",
+		"webpack": "webpack --config config/webpack/webpack.config.js --mode development",
+		"webpack-dev": "webpack --config config/webpack/webpack.config.js --mode development --watch",
+		"test-compile": "tsc -p ./",
+		"lint": "tslint -p ./",
+		"compile": "clear && tsc -p ./ --esModuleInterop",
+		"watch": "tsc -watch -p ./ --esModuleInterop",
+		"pretest": "npm run compile",
+		"test": "clear && node ./dist/utilities/test-runner/environment.js",
+		"clear": "rimraf ./dist && rimraf *.vsix"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/PeterPorzuczek/jest-cucumber-code-generator-extension.git"
+	},
+	"author": "Piotr Porzuczek",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/PeterPorzuczek/jest-cucumber-code-generator-extension/issues"
+	},
+	"homepage": "https://github.com/PeterPorzuczek/jest-cucumber-code-generator-extension#readme",
+	"devDependencies": {
+		"@types/glob": "^7.1.1",
+		"@types/jest-cli": "^23.6.0",
+		"@types/node": "^10.12.21",
+		"@types/vscode": "^1.38.0",
+		"glob": "^7.1.4",
+		"jest-cli": "^24.9.0",
+		"rimraf": "^3.0.0",
+		"ts-loader": "^6.1.2",
+		"tslint": "^5.12.1",
+		"typescript": "^3.3.1",
+		"vscode-test": "^1.2.0",
+		"webpack": "^4.40.2",
+		"webpack-cli": "^3.3.9"
+	},
+	"dependencies": {
+		"flush-promises": "^1.0.2",
+		"jest-cucumber": "^2.0.11",
+		"js-beautify": "^1.10.2"
+	},
+	"jest": {
+		"moduleFileExtensions": [
+			"js"
+		],
+		"testMatch": [
+			"<rootDir>/dist/**/*.spec.js"
+		],
+		"verbose": true,
+		"testMatch": [
+			"**/*.spec.js"
+		]
+	}
+}
