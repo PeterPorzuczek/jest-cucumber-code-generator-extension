@@ -1,6 +1,6 @@
-import
-	{ 	parseFeature,
-		generateCodeFromFeature }
+import {
+	parseFeature,
+	generateCodeFromFeature }
 	from 'jest-cucumber';
 import
     formatter
