@@ -1,9 +1,16 @@
 Feature: Rocket Launching
 
-	Scenario: Launching a SpaceX rocket one
+	Scenario Outline: Launching a SpaceX rocket
 		Given I am Elon Musk attempting to launch a rocket into space
+		When I launch the rocket <number>
+		Then the launch is a <outcome>
 
-	Scenario: Launching a SpaceX rocket two
+		Examples: Rocket examples
+			| number | outcome |
+			| one    | failure |
+			| two    | success |
+
+	Scenario: Launching SpaceX rocket two
 		Given I am Elon Musk attempting to launch a rocket into space
 		When I launch the rocket
 		Then the rocket should end up in space
