@@ -19,7 +19,8 @@ function generateCommandsFromFeatureAsText(
 	}
 }
 function areScenariosPresentIn(feature) {
-	return feature.scenarios.length > 0;
+	return feature.scenarios.length +
+		feature.scenarioOutlines.length > 0;
 }
 function generateCommands(
 	feature,
@@ -71,7 +72,11 @@ function generateScenarioCommands(
 ) {
 	let commands = [];
 	feature.scenarios = filterScenariosFrom(
-		feature,
+		feature.scenarios,
+		selectionInformation
+	);
+	feature.scenarioOutlines = filterScenariosFrom(
+		feature.scenarioOutlines,
 		selectionInformation
 	);
 	commands = generateCommandsFrom(feature);
@@ -82,10 +87,10 @@ function generateScenarioCommands(
 	);
 }
 function filterScenariosFrom(
-	feature,
+	scenarios,
 	selectionInformation
 ) {
-	return feature.scenarios.filter(scenario => {
+	return scenarios.filter(scenario => {
 		const { lineNumber } = scenario;
 		const { start, end } = selectionInformation;
 		
@@ -94,7 +99,11 @@ function filterScenariosFrom(
 	});
 }
 function generateCommandsFrom(feature) {
-	return feature.scenarios.map(scenario =>
+	return feature.scenarios
+		.concat(feature.scenarioOutlines)
+		.sort((a, b) =>
+			Math.sign(a.lineNumber - b.lineNumber))
+		.map(scenario =>
 		generateCodeFromFeature(
 			feature,
 			scenario.lineNumber
