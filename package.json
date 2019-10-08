@@ -2,7 +2,7 @@
 	"name": "jest-cucumber-code-generator-extension",
 	"displayName": "Jest-cucumber code generator",
 	"description": "Jest-cucumber code generator for VS Code",
-	"version": "1.0.0",
+	"version": "1.0.2",
 	"publisher": "piotr-porzuczek",
 	"engines": {
 		"vscode": "^1.38.0"
@@ -79,11 +79,8 @@
 			"js"
 		],
 		"testMatch": [
-			"<rootDir>/dist/**/*.spec.js"
-		],
-		"verbose": true,
-		"testMatch": [
 			"**/*.spec.js"
-		]
+		],
+		"verbose": true
 	}
 }
