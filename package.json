@@ -2,10 +2,10 @@
 	"name": "jest-cucumber-code-generator-extension",
 	"displayName": "Jest-cucumber code generator",
 	"description": "Jest-cucumber code generator for VS Code",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"publisher": "piotr-porzuczek",
 	"engines": {
-		"vscode": "^1.38.0"
+		"vscode": "^1.66.0"
 	},
 	"categories": [
 		"Other"
@@ -55,24 +55,25 @@
 	},
 	"homepage": "https://github.com/PeterPorzuczek/jest-cucumber-code-generator-extension#readme",
 	"devDependencies": {
-		"@types/glob": "^7.1.1",
-		"@types/jest-cli": "^23.6.0",
-		"@types/node": "^10.12.21",
-		"@types/vscode": "^1.38.0",
-		"glob": "^7.1.4",
-		"jest-cli": "^24.9.0",
-		"rimraf": "^3.0.0",
-		"ts-loader": "^6.1.2",
-		"tslint": "^5.12.1",
-		"typescript": "^3.3.1",
-		"vscode-test": "^1.2.0",
-		"webpack": "^4.40.2",
-		"webpack-cli": "^3.3.9"
+		"@types/glob": "^7.2.0",
+		"@types/jest-cli": "^24.3.0",
+		"@types/node": "^17.0.25",
+		"@types/vscode": "^1.66.0",
+		"glob": "^8.0.1",
+		"jest": "^27.5.1",
+		"jest-cli": "^27.5.1",
+		"rimraf": "^3.0.2",
+		"ts-loader": "^9.2.8",
+		"tslint": "^6.1.3",
+		"typescript": "^4.6.3",
+		"vscode-test": "^1.6.1",
+		"webpack": "^5.72.0",
+		"webpack-cli": "^4.9.2"
 	},
 	"dependencies": {
 		"flush-promises": "^1.0.2",
-		"jest-cucumber": "^2.0.11",
-		"js-beautify": "^1.10.2"
+		"jest-cucumber": "^3.0.1",
+		"js-beautify": "^1.14.3"
 	},
 	"jest": {
 		"moduleFileExtensions": [
