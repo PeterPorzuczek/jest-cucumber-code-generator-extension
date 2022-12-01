@@ -17,6 +17,8 @@ The plugin allows you to generate code from a file with the extension `.feature`
 
 3. The generated commands will be available in the clipboard ready for pasting.
 
+4. Add code in functions.
+
 ### Preview:
 <div>
 	<img src="https://i.imgur.com/EJHEvyM.gif" alt="app-preview" width="80%">
