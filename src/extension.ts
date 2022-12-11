@@ -38,6 +38,16 @@ function processDocument() {
 		selectionInformation: createSelectionLinesInformation(editor)
 	};
 }
+function createSelectionLinesInformation(editor) {
+	return {
+		count: editor.document.lineCount,
+		start: editor.selection.start.line + 1,
+		end: editor.selection.end.line + 1,
+		text: editor.document.getText(
+			editor.selection
+		)
+	};
+}
 function putCommandsInClipboard(
 	documentText,
 	selectionInformation
@@ -53,14 +63,4 @@ function putCommandsInClipboard(
 }
 function handleError(error) {
 	vscode.window.showErrorMessage(error.message);
-}
-function createSelectionLinesInformation(editor) {
-	return {
-		count: editor.document.lineCount,
-		start: editor.selection.start.line + 1,
-		end: editor.selection.end.line + 1,
-		text: editor.document.getText(
-			editor.selection
-		)
-	};
 }

@@ -2,25 +2,6 @@ import {
 	js }
 	from 'js-beautify';
 
-function format(commands, wrap) { 
-	const newLine = '\r\n';
-	let commandsAsText = commands.join(newLine);
-	if (wrap) {
-		commandsAsText = wrapInDefineFeature(
-			commandsAsText).join(newLine);
-		}
-		
-	return formatJavascript(commandsAsText);
-}
-function wrapInDefineFeature(commandsAsText) {
-	const commandsInDefineFeature = [
-		'defineFeature(feature, test => {',
-		commandsAsText,
-		'});'
-	];
-    
-	return commandsInDefineFeature;
-}
 function formatJavascript(commands) { 
 	const formatedJavascript = js(
 		commands,
@@ -31,6 +12,25 @@ function formatJavascript(commands) {
 	);
 	
 	return formatedJavascript;
+}
+function wrapInDefineFeature(commandsAsText) {
+	const commandsInDefineFeature = [
+		'defineFeature(feature, test => {',
+		commandsAsText,
+		'});'
+	];
+    
+	return commandsInDefineFeature;
+}
+function format(commands, wrap) { 
+	const newLine = '\r\n';
+	let commandsAsText = commands.join(newLine);
+	if (wrap) {
+		commandsAsText = wrapInDefineFeature(
+			commandsAsText).join(newLine);
+		}
+		
+	return formatJavascript(commandsAsText);
 }
 
 export default {
