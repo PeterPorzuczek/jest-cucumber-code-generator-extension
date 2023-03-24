@@ -28,15 +28,15 @@ The plugin allows you to generate code from a file with the extension `.feature`
 > Tip: It is important to do it in the file with `.feature` extension.
 >
 > Command is also available through command pallette.
->
+
+
+# Join Our Community
+
+[![Stargazers repo roster for @PeterPorzuczek/jest-cucumber-code-generator-extension](https://reporoster.com/stars/PeterPorzuczek/jest-cucumber-code-generator-extension)](https://github.com/PeterPorzuczek/jest-cucumber-code-generator-extension/stargazers)
 
 #### Credits
 
 ##### Icon author:
 <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div>
 
-# Join Our Community
 
-
-
-[![Stargazers repo roster for @nocodb/nocodb](https://reporoster.com/stars/nocodb/nocodb)](https://github.com/nocodb/nocodb/stargazers)
