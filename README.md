@@ -34,3 +34,16 @@ The plugin allows you to generate code from a file with the extension `.feature`
 
 ##### Icon author:
 <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/"             title="Flaticon">www.flaticon.com</a></div>
+
+# Join Our Community
+
+<a href="https://discord.gg/5RgZmkW" target="_blank">
+<img src="https://discordapp.com/api/guilds/661905455894888490/widget.png?style=banner3" alt="">
+</a>
+
+<!-- <a href="https://community.nocodb.com/" target="_blank">
+<img src="https://i2.wp.com/www.feverbee.com/wp-content/uploads/2018/07/logo-discourse.png" alt="">
+</a>
+ -->
+
+[![Stargazers repo roster for @nocodb/nocodb](https://reporoster.com/stars/nocodb/nocodb)](https://github.com/nocodb/nocodb/stargazers)
