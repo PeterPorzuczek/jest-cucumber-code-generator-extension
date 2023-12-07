@@ -13,8 +13,8 @@
 	"activationEvents": [
 		"onCommand:extension.generateCodeFromFeature"
 	],
-	"icon": "icon.png",
 	"main": "./dist/extension",
+	"icon": "icon.png",
 	"contributes": {
 		"commands": [
 			{

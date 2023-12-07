@@ -18,10 +18,6 @@ function generateCommandsFromFeatureAsText(
 		);
 	}
 }
-function areScenariosPresentIn(feature) {
-	return feature.scenarios.length +
-		feature.scenarioOutlines.length > 0;
-}
 function generateCommands(
 	feature,
 	selectionInformation
@@ -44,16 +40,20 @@ function generateCommands(
 		);
 	}
 }
-function isFeatureIn(selectionInformation) {
-	return selectionInformation.start === 1;
+function areScenariosPresentIn(feature) {
+	return feature.scenarios.length +
+		feature.scenarioOutlines.length > 0;
+}
+function isStepIn(selectionInformation) {
+	return !selectionInformation.text
+		.toLowerCase().includes('scenario:');
 }
 function isScenarioIn(selectionInformation) {
 	return selectionInformation.text
 		.toLowerCase().includes('scenario:');
 }
-function isStepIn(selectionInformation) {
-	return !selectionInformation.text
-		.toLowerCase().includes('scenario:');
+function isFeatureIn(selectionInformation) {
+	return selectionInformation.start === 1;
 }
 function generateFeatureCommands(
 	feature
@@ -98,17 +98,6 @@ function filterScenariosFrom(
 				lineNumber <= end;
 	});
 }
-function generateCommandsFrom(feature) {
-	return feature.scenarios
-		.concat(feature.scenarioOutlines)
-		.sort((a, b) =>
-			Math.sign(a.lineNumber - b.lineNumber))
-		.map(scenario =>
-		generateCodeFromFeature(
-			feature,
-			scenario.lineNumber
-		));
-}
 function generateStepsCommands(
 	feature,
 	selectionInformation
@@ -127,6 +116,17 @@ function generateStepsCommands(
 		commands, 
 		false
 	);
+}
+function generateCommandsFrom(feature) {
+	return feature.scenarios
+		.concat(feature.scenarioOutlines)
+		.sort((a, b) =>
+			Math.sign(a.lineNumber - b.lineNumber))
+		.map(scenario =>
+		generateCodeFromFeature(
+			feature,
+			scenario.lineNumber
+		));
 }
 
 export default {
